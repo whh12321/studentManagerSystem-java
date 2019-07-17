@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=GB18030"
+    pageEncoding="GB18030"%>
+<%@page import="db.StudentManager" %>
+<%@page import="db.Student" %>
+<%@page import="java.util.ArrayList" %>
+<!DOCTYPE html>
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css">
+<meta charset="ISO-8859-1">
+<title>²é¿´Ñ§ÉúÐÅÏ¢</title>
+</head>
+<body>
+<%
+String id=request.getParameter("id");
+Student student=StudentManager.getStudent(id);
+%>
+<div align="center">
+<table width="500" cellpadding="1" cellspacing="1">
+<tr>
+	<td colspan="9" align="center" class="title" height="30">Ñ§ÉúÐÅÏ¢</td>
+</tr>
+<tr height="30">
+<td align="center" class="header" width="100">Ñ§ºÅ£º</td>
+<td align="center" class="data" ><%=student.getId() %></td>
+</tr>
+<tr height="30">
+<td align="center" class="header" width="100">ÐÕÃû£º</td>
+<td align="center" class="data" ><%=student.getName() %></td>
+</tr>
+<tr height="30">
+<td align="center" class="header" width="100">ÄêÁä£º</td>
+<td align="center" class="data" ><%=student.getAge() %></td>
+</tr>
+<tr height="30">
+<td align="center" class="header" width="100">ÐÔ±ð£º</td>
+<td align="center" class="data" ><%=(student.getSex()==1?"ÄÐ":"Å®") %></td>
+</tr>
+<tr height="30">
+<td align="center" class="header" width="100">×¨Òµ£º</td>
+<td align="center" class="data" ><%=student.getMajor() %>></td>
+</tr>
+<tr height="30">
+<td align="center" class="header" width="100">Ñ§Ôº£º</td>
+<td align="center" class="data" ><%=student.getCollege() %>></td>
+</tr>
+<tr height="30">
+<td align="center" class="header" width="100">¼ò½é£º</td>
+<td align="left" class="data" ><%=student.getIntroduction() %></td>
+</tr>
+
+</table>
+</div>
+</body>
+</html>
